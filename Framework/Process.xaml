@@ -1,0 +1,241 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>818.4,454.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Numerics</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Check for planned outages. If found, send email." DisplayName="Process" sap:VirtualizedContainerService.HintSize="2796,2274" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strResult" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="451,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Odstávky a poruchy - Západoslovenská distribučná, a. s." sap:VirtualizedContainerService.HintSize="451,1393" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="533c2677-d3ea-4587-9cae-e462e72f3d31" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1144" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Obec'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="533c2677-d3ea-4587-9cae-e462e72f3d31" Text="[in_Config(&quot;NameCity&quot;).ToString + &quot;[k(down)][k(enter)]&quot;]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.zsdis.sk/Uvod/Online-sluzby/Odstavky-a-poruchy" CVScreenId="11573bc5-11b3-4e27-b8cb-4ee845edf55b" CvElementArea="346, 693, 365, 49" CvType="InputBox" DesignTimeRectangle="349, 695, 360, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='outagesFM_city' tag='INPUT' type='text' class='textbox_big ui-autocomplete-input' aaname='Obec:' /&gt;" Guid="c4ef4ec9-f32b-4b1d-801f-851b980688f7" InformativeScreenshot="845f42e64371a637a2f4d5c82ba6c88e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Odstávky a poruchy - Západoslovenská distribučná, a. s.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="11573bc5-11b3-4e27-b8cb-4ee845edf55b" CvTextArea="348, 663, 48, 16" CvTextArgument="Obec:" CvType="Text" DesignTimeRectangle="349, 660, 360, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='outages-and-failures' tag='LABEL' type='' class='control-label' aaname='Obec:' check:innerText='Obec:' /&gt;" Guid="f7b990a0-b774-49a9-a270-dbc8fc81f750" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ulica'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="533c2677-d3ea-4587-9cae-e462e72f3d31" Text="[in_Config(&quot;NameStreet&quot;).ToString  + &quot;[k(down)][k(enter)]&quot;]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.zsdis.sk/Uvod/Online-sluzby/Odstavky-a-poruchy" CVScreenId="11573bc5-11b3-4e27-b8cb-4ee845edf55b" CvElementArea="747, 693, 209, 49" CvType="InputBox" DesignTimeRectangle="749, 695, 205, 46" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='outagesFM_street' tag='INPUT' type='text' class='textbox_big ui-autocomplete-input' aaname='Ulica:' /&gt;" Guid="bb57fb68-7a1a-4b05-9702-eff54ad0df5f" InformativeScreenshot="9fdadf30005a6c994a6cf6842e72648f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Odstávky a poruchy - Západoslovenská distribučná, a. s.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="11573bc5-11b3-4e27-b8cb-4ee845edf55b" CvTextArea="748, 663, 46, 16" CvTextArgument="Ulica:" CvType="Text" DesignTimeRectangle="749, 660, 205, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Ulica:' parentid='outages-and-failures' tag='LABEL' type='' class='control-label' check:innerText='Ulica:' /&gt;" Guid="c6758352-0006-4288-89c7-3f19972f4365" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Vyhľadať'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="533c2677-d3ea-4587-9cae-e462e72f3d31" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.zsdis.sk/Uvod/Online-sluzby/Odstavky-a-poruchy" CVScreenId="11573bc5-11b3-4e27-b8cb-4ee845edf55b" CvTextArea="369, 895, 74, 13" CvTextArgument="\shľadat'" CvType="Text" DesignTimeRectangle="349, 881, 114, 47" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='outagesFM__search' tag='INPUT' type='submit' class='button' aaname='Vyhľadať' check:text='Vyhľadať' /&gt;" Guid="82882cc8-a760-4ece-9bb7-d7f2d57360b1" InformativeScreenshot="6690ebe6baec179d4b6beb106f27cf9e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Odstávky a poruchy - Západoslovenská distribučná, a. s.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text from Situácia" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="533c2677-d3ea-4587-9cae-e462e72f3d31" TextString="[strResult]" Version="V4">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.zsdis.sk/Uvod/Online-sluzby/Odstavky-a-poruchy?__boxId=c9649&amp;__mvcevent=outagesList&amp;outagesFMSaved=1" CVScreenId="c20d5e67-fa9a-4ced-b7f7-b7ae58319c3e" DesignTimeRectangle="609, 587, 707, 23" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='result-text' type='' parentid='outages-and-failures' tag='DIV' /&gt;" Guid="7894f65a-c2f2-4362-800d-69953eb908ad" ImageBase64="" InformativeScreenshot="6b2d7078984b118f759a6a5f7d1a6a2f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Odstávky a poruchy - Západoslovenská distribučná, a. s.' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="c20d5e67-fa9a-4ced-b7f7-b7ae58319c3e" DesignTimeRectangle="407, 587, 198, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Situácia:' class='result-label' parentid='outages-and-failures' tag='DIV' type='' check:innerText='Situácia:' /&gt;" Guid="06801208-d610-4d1d-8462-c4224c88ce74" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strResult]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="23, 0, 1705, 1152" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="73f9bbd98b76be50ccf9afdd0923d511.jpg" Selector="&lt;html app='chrome.exe' title='Odstávky a poruchy - Západoslovenská distribučná, a. s.' /&gt;" Title="Odstávky a poruchy - Západoslovenská distribučná, a. s." Url="https://www.zsdis.sk/Uvod/Online-sluzby/Odstavky-a-poruchy" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <If Condition="[not strResult = &quot;Na vybranej ulici neevidujeme žiadnu poruchu ani plánovanú odstávku.&quot;]" DisplayName="If found planned outages" sap:VirtualizedContainerService.HintSize="451,654" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,404" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="ss:SecureString" Name="sstrPassword" />
+            <Variable x:TypeArguments="x:String" Name="strUsername" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Mail_NoReply" CacheStrategy="None" DisplayName="Get Credential for mail" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPassword]" Username="[strUsername]" />
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Názov mesta: &quot; + in_Config(&quot;NameCity&quot;).ToString +vbCrLf +&#xA;&quot;Názov ulice: &quot; + in_Config(&quot;NameStreet&quot;).ToString + vbCrLf +&#xA;System.Text.RegularExpressions.Regex.Replace(strResult, &quot;^\s*$[\r\n]*|^\s+&quot;, String.Empty, System.Text.RegularExpressions.RegexOptions.Multiline)]" DisplayName="Send SMTP Mail Message with planned outages" Email="[strUsername]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="382,169" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[Convert.ToInt32(in_Config(&quot;SmtpPort&quot;).ToString)]" SecureConnection="Auto" SecurePassword="[sstrPassword]" Server="[in_Config(&quot;SmtpServer&quot;).ToString]" Subject="[in_Config(&quot;logF_BusinessProcessName&quot;).ToString + &quot; - &quot; + in_Config(&quot;MailSubject&quot;).ToString]" To="[in_Config(&quot;MailRecipient&quot;).ToString]">
+            <ui:SendMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </ui:SendMail.Files>
+          </ui:SendMail>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
