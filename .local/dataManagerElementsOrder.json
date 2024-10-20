@@ -26,8 +26,6 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strUsername&Sequence_35",
-        "sstrPassword&Sequence_35",
         "cjiJobInfo&Sequence_17",
         "strFolderData&Sequence_17",
         "SystemException&StateMachine_1",

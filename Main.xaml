@@ -123,7 +123,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[ZSE_PlannedOutages]&#xA;[Robot checks if the are any planned power outages on ZSE website]&#xA;[Martin Pucovski]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="2813,529.2239999999999" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[ZSE_PlannedOutages]&#xA;[Robot checks if the are any planned power outages on ZSE website]&#xA;[Martin Pucovski]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="2813,882.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -267,7 +267,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="232,102" sap2010:WorkflowViewState.IdRef="State_2">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="568,2588" sap2010:WorkflowViewState.IdRef="State_2">
               <State.Entry>
                 <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="522,2169" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                   <sap:WorkflowViewStateService.ViewState>
@@ -312,7 +312,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Folder_Data" CacheStrategy="None" DisplayName="Get Asset Folder Path" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Folder_Data" CacheStrategy="None" DisplayName="Get Asset Folder Path" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
                               <ui:GetRobotAsset.Value>
                                 <OutArgument x:TypeArguments="x:String">[strFolderData]</OutArgument>
                               </ui:GetRobotAsset.Value>
@@ -436,7 +436,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="568,1766" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="200,102" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                       <State.Entry>
                         <Sequence sap:VirtualizedContainerService.HintSize="522,1621" sap2010:WorkflowViewState.IdRef="Sequence_33">
                           <sap:WorkflowViewStateService.ViewState>
@@ -467,7 +467,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Error" Message="[SystemException]" />
-                                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Mail_NoReply" CacheStrategy="None" DisplayName="Get Credential for mail" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPassword]" Username="[strUsername]" />
+                                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Mail_NoReply" CacheStrategy="None" DisplayName="Get Credential for mail" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPassword]" Username="[strUsername]" />
                                 <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[SystemException.ToString]" DisplayName="Send SMTP Mail Message" Email="[strUsername]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="382,169" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[Convert.ToInt32(Config(&quot;SmtpPort&quot;).ToString)]" SecureConnection="Auto" SecurePassword="[sstrPassword]" Server="[Config(&quot;SmtpServer&quot;).ToString]" Subject="[Config(&quot;logF_BusinessProcessName&quot;).ToString + &quot; - Error&quot;]" To="[Config(&quot;MailRecipient&quot;).ToString]">
                                   <ui:SendMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
@@ -588,9 +588,7 @@
           <Transition.To>
             <x:Reference>__ReferenceID1</x:Reference>
           </Transition.To>
-          <Transition.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="SystemException Is Nothing" />
-          </Transition.Condition>
+          <Transition.Condition>[SystemException Is Nothing]</Transition.Condition>
         </Transition>
       </State.Transitions>
     </State>
